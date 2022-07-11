@@ -1,0 +1,2 @@
+1. You have install the chainlink priceConverter contract from npm/yarn via `` yarn add --dev @chainlink/contracts ``  to access it.
+

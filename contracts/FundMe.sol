@@ -15,7 +15,6 @@ contract FundMe {
     mapping(address => uint256) public addressToAmountFunded;
 
     //  Creating a constructor So, only the owner of funds can withdraw it
-
     address public owner;
 
     constructor() {
