@@ -1,2 +1,37 @@
 1. You have install the chainlink priceConverter contract from npm/yarn via `` yarn add --dev @chainlink/contracts ``  to access it.
 
+2. Installing a deploy package known as "hardhat-deploy" instead of normal deploy script to keep track of multiple deploy file. This way we can easily test and deploy our contract. Installing process => `` yarn add --dev hardhat-deloy `` . Then add require statement in hardhat.config file and also create a new folder deploy
+
+3. if you use ether.js we recommend you to also install "hardhat-deloy-ethers" with "hardhat-deploy" which add extra features to access deployments as ethers contract. Installation Process => 
+`` yarn add hardhat --dev @nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers ethers ``
+
+4. with step 3 ether.js will remember all the deploys
+
+5. we are using "aave-v3-core" github repo to enable the functionality to use different priceConverter addressess in 01-deploy-fund-me file. So, what they do is, they use something called "helper-hardhat-config" to make "different variables depending on which network they are working for and according to that network they have different variables"
+
+NOTE  = AAVE is a Defi protocol on multiple chains and have to deploy their "contracts" to multiple "chains" and work with multiple "addressess"
+
+6. Create new file called "helper-hardhat-config.js" and define all the networks and addressess
+
+7. Adding etherscan verify code in utils/verify.js and importing it in deploy-fund-me 
+
+8. Tests: 
+   a) Unit test - this test are done locally for every single piece of code.
+    i) Local hardhat
+    ii) forked hardhat
+   b) Staging tests - this can be done on testnet and is a last stage of testing
+
+9. In "Fundme.test.js" file to test that function you must install this dependencies : 
+    i) hardhat-waffle ,
+    ii) hardhat-chai-matchers
+
+10. Test BreakPoints and Debugging in vscode tips:
+   i) go to FundMe.test.js > withdraw test > transactionReceipt variable. Then one line below, near the numbers(left hand side of editor) some red dot appear on hover. You can click it, that way you will go in debug mode.
+   ii) With this red dot one BreakPoint will emerge for that test. and that test will stop at that point.
+   iii) In this way, you can see all the available tasks or parameters for "transactionReceipt" function
+   iv) After all the above steps => Tap "Run & Debug" icon in vscode, Than click Javascript Debug terminal. This will lead you to new terminal window, Than run `` yarn hardhat test ``.
+   v) Go to "Debug Console" tab in terminal window and Call any function you want information in this case(transactionReceipt) than click enter.
+   vi) There we will see "effectiveGasPrice" and "gasUsed". Now we can use this 2 function to get the gasCost of withdraw().
+   vii) Exist he Debug mode by clicking the disconnect icon above and remove the BreakPoints
+
+11. See "hardhat-console.log" => this a debugger fixture which you can import in solidity file. and use same as Javascript console.log to easy debug of your code. ``import "hardhat/console.log"``

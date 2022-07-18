@@ -1,0 +1,19 @@
+1. Pragma 
+2. Imports 
+3. Error Codes
+4. Interfaces
+5. Libraries
+6. Contracts
+7. Type Declarations
+8. State Variables!
+9. Events
+10. Modifier
+11. Functions Order: 
+    /// constructor
+    /// receive
+    /// fallback
+    /// external
+    /// public
+    /// internal
+    /// private
+    /// view / pure
