@@ -35,3 +35,5 @@ NOTE  = AAVE is a Defi protocol on multiple chains and have to deploy their "con
    vii) Exist he Debug mode by clicking the disconnect icon above and remove the BreakPoints
 
 11. See "hardhat-console.log" => this a debugger fixture which you can import in solidity file. and use same as Javascript console.log to easy debug of your code. ``import "hardhat/console.log"``
+
+12. Whenever you are declaring a State variable, consider adding "s_" prefix in the name of that variable to show, that they will be gonna store in storage of contract and cost more gas. but not in "constant & immutable" variable. ex=>   `s_pricefeed`
