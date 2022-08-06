@@ -1,4 +1,7 @@
 {
+  "name": "hardhat-fundme",
+  "author": "Rohit Kumar Suman",
+  "version": "1.0.0",
   "devDependencies": {
     "@chainlink/contracts": "^0.4.1",
     "@ethersproject/abi": "^5.4.7",
@@ -8,6 +11,7 @@
     "@nomicfoundation/hardhat-toolbox": "^1.0.1",
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
     "@nomiclabs/hardhat-etherscan": "^3.1.0",
+    "@nomiclabs/hardhat-solhint": "^2.0.1",
     "@nomiclabs/hardhat-waffle": "^2.0.3",
     "@typechain/ethers-v5": "^10.1.0",
     "@typechain/hardhat": "^6.1.2",
@@ -20,7 +24,8 @@
     "solidity-coverage": "^0.7.21",
     "typechain": "^8.1.0"
   },
-  "dependencies": {
-    "@nomiclabs/hardhat-solhint": "^2.0.1"
+  "scripts": {
+    "test": "yarn hardhat test",
+    "test:staging": "yarn hardhat test --network rinkeby"
   }
 }

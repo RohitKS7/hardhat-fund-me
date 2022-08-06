@@ -19,7 +19,7 @@ NOTE  = AAVE is a Defi protocol on multiple chains and have to deploy their "con
    a) Unit test - this test are done locally for every single piece of code.
     i) Local hardhat
     ii) forked hardhat
-   b) Staging tests - this can be done on testnet and is a last stage of testing
+   b) Staging tests - this need to be done on testnet and is a last stage of testing/whole development journey
 
 9. In "Fundme.test.js" file to test that function you must install this dependencies : 
     i) hardhat-waffle ,
@@ -37,3 +37,5 @@ NOTE  = AAVE is a Defi protocol on multiple chains and have to deploy their "con
 11. See "hardhat-console.log" => this a debugger fixture which you can import in solidity file. and use same as Javascript console.log to easy debug of your code. ``import "hardhat/console.log"``
 
 12. Whenever you are declaring a State variable, consider adding "s_" prefix in the name of that variable to show, that they will be gonna store in storage of contract and cost more gas. but not in "constant & immutable" variable. ex=>   `s_pricefeed`
+
+13. See package.json "scripts" to shorten the terminal cmds

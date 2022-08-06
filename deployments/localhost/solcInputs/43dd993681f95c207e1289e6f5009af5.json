@@ -1,7 +1,7 @@
 {
   "language": "Solidity",
   "sources": {
-    "contracts/test/MockV3Aggregator.sol": {
+    "contracts/mocktest/MockV3Aggregator.sol": {
       "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.6.0;\n\nimport \"@chainlink/contracts/src/v0.6/tests/MockV3Aggregator.sol\";\n\n// a mock contract to set fake price for localhost network imported form chainlink\n"
     },
     "@chainlink/contracts/src/v0.6/tests/MockV3Aggregator.sol": {
